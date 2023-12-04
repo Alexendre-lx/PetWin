@@ -1,0 +1,12 @@
+@import '@petwin/styles/utils';
+
+.contestGridBigPicture img {
+  height: 44.6875rem; /* 715px converted to rem */
+}
+
+@media (max-width: 48rem) {
+  /* 768px converted to rem */
+  .contestGridBigPicture img {
+    height: 22.8125rem; /* 365px converted to rem */
+  }
+}

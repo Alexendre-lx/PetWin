@@ -1,0 +1,85 @@
+@import '@petwin/styles/utils';
+
+.testimonialsComponentContainer {
+  background-color: $primary-white;
+  height: 100%;
+
+  h3 {
+    color: #000;
+    font-family: $primary-font-sans;
+    font-size: 1rem; /* 14px */
+    font-weight: 600;
+  }
+
+  p {
+    color: #000;
+    font-family: $primary-font-sans;
+    font-size: 0.925rem; /* 10px */
+    font-weight: 500;
+    line-height: 1.4; /* 140% */
+    text-transform: capitalize;
+  }
+
+  span {
+    color: #adadad;
+    font-family: $primary-font-sans;
+    font-size: 0.6rem; /* 8px */
+    font-weight: 500;
+    line-height: 0.485rem; /* 7.735px */
+    text-transform: capitalize;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .testimonialsComponentItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3125rem; /* 5px */
+  }
+}
+
+.testimonialsComponentPrize {
+  border-radius: 1.5625rem; /* 25px */
+
+  p {
+    color: #000;
+    text-align: center;
+    font-family: $primary-font-sans;
+    font-size: 0.6rem; /* 8px */
+    font-weight: 600;
+  }
+}
+
+@media (min-width: 48rem) {
+  .testimonialsComponentContainer {
+    background-color: $primary-white;
+
+    h3 {
+      color: #000;
+      font-weight: 600;
+      font-size: 1.375rem; /* 22px */
+    }
+
+    p {
+      color: #000;
+      font-weight: 500;
+      line-height: 1.3333; /* 24px / 18px */
+      text-transform: capitalize;
+      font-size: 1.125rem; /* 18px */
+    }
+
+    span {
+      font-size: 1.125rem; /* 18px */
+    }
+  }
+
+  .testimonialsComponentPrize {
+    border-radius: 1.5625rem; /* 25px */
+
+    p {
+      font-size: 1.25rem; /* 20px */
+    }
+  }
+}

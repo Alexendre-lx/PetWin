@@ -1,0 +1,8 @@
+@import '@petwin/styles/utils';
+
+.Container {
+  background: $primary-blue;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.25rem 0.625rem rgba(62, 63, 66, 0.15);
+  overflow: hidden;
+}

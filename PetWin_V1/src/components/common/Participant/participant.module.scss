@@ -1,0 +1,93 @@
+@import '@petwin/styles/utils';
+
+.ParticipantContainer {
+  font-family: $primary-font-sans;
+  font-size: 1.125rem; /* 18px */
+
+
+  h2 {
+    color: $primary-blue;
+    font-size: 1.75rem !important; /* 28px */
+  }
+
+  .ParticipantImage {
+    aspect-ratio: 5/3;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .ParticipantBadge {
+      margin: 0.625rem; /* 10px */
+      background-color: $primary-white;
+      font-weight: 600;
+      gap: 0.3125rem; /* 5px */
+      display: flex;
+      padding: 0.3125rem 0.625rem; /* 5px 10px */
+      border-radius: 0.9375rem; /* 15px */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-height: 2rem; /* 32px */
+      max-width: 5.9375rem; /* 95px */
+
+      svg {
+        width: 20%;
+        height: 20%;
+      }
+    }
+  }
+
+  .ParticipantName {
+    font-size: 1.5rem; /* 24px */
+    margin: 0;
+  }
+}
+
+@media (max-width: 48rem) {
+  /* 768px */
+  .ParticipantContainer {
+    font-family: $primary-font-sans;
+    font-size: 1rem; /* 14px */
+
+    h2 {
+      color: $primary-blue;
+      font-size: 1.125rem !important; /* 18px */
+    }
+
+    .ParticipantImage {
+      aspect-ratio: 5/3;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .ParticipantBadge {
+        margin: 0.625rem; /* 10px */
+        background-color: $primary-white;
+        font-weight: 600;
+        gap: 0.3125rem; /* 5px */
+        display: flex;
+        padding: 0.3125rem 0.625rem; /* 5px 10px */
+        border-radius: 0.9375rem; /* 15px */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 2rem; /* 32px */
+
+        svg {
+          width: 20%;
+          height: 20%;
+        }
+      }
+    }
+
+    .ParticipantName {
+      font-size: 1.125rem; /* 18px */
+    }
+  }
+}

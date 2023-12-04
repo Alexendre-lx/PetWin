@@ -1,0 +1,9 @@
+.Container {
+  padding: 0 1.25rem;
+}
+
+@media (min-width: 48rem) {
+  .Container {
+    padding: 0 8.875rem;
+  }
+}

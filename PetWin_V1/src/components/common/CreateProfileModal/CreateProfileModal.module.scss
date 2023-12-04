@@ -1,0 +1,49 @@
+@import '@petwin/styles/utils';
+
+.Modal {
+  .ModalTitle {
+
+  }
+  .Alert {
+    color: red;
+    animation: shake 0.3s;
+  }
+  .Confirmation {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  .InputForm {
+    margin: auto;
+    margin-top: 1.25rem; /* 20px */
+
+    .Label {
+      font-family: $primary-font-sans;
+    }
+
+    .Input {
+      border-radius: 0.875rem; /* 14px */
+      border: 1px solid #b8b8b8;
+      background: #fff;
+      font-size: 1.125rem; /* 18px */
+      font-weight: 500;
+      padding: 0.625rem 1.25rem; /* 10px 20px */
+      margin-top: 0.625rem; /* 10px */
+      width: 100%;
+    }
+
+    .Select {
+      padding-left: 1rem!important;
+    }
+  }
+
+  .ModalFooter {
+    justify-content: center;
+    .ButtonContainer {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+@import '@petwin/styles/utils';
+
+.Footer {
+  background-color: $background-blue;
+  display: flex;
+  justify-content: center;
+  padding: 0.625rem; /* 10px */
+  margin-top: auto;
+  flex-shrink: 0;
+
+  a {
+    text-decoration: none;
+    color: $primary-blue;
+    font-family: $primary-font-sans;
+    font-size: 1rem; /* 14px */
+    font-weight: 500;
+  }
+}
+
+.MobileMenu {
+  display: none;
+}
+
+@media only screen and (max-width: 48rem) {
+  /* 768px */
+  .Footer {
+    display: none;
+  }
+
+  .MobileMenu {
+    display: block;
+    flex-shrink: 0;
+    padding: 0.9375rem 1.25rem; /* 15px 20px */
+    width: 100%;
+    background: $background-light-blue;
+    height: 82px;
+    z-index: 999;
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      text-align: center;
+      padding-left: 0;
+      font-size: 0.9rem; /* 12px */
+      margin-bottom: 0;
+
+      li {
+        a {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          color: black;
+          text-decoration: none;
+
+          svg {
+            margin-bottom: 0.625rem; /* 10px */
+          }
+        }
+
+        .Active {
+          color: $primary-blue;
+
+          svg {
+            path {
+              stroke: $primary-blue;
+            }
+          }
+        }
+      }
+
+      .ActiveBold {
+        color: $primary-blue;
+
+        svg {
+          path {
+            fill: $primary-blue;
+          }
+        }
+      }
+    }
+  }
+}

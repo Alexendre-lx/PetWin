@@ -1,0 +1,241 @@
+@import '@petwin/styles/utils';
+
+@media (max-width: 48rem) {
+  .Form {
+    .FormContainer {
+      width: 90% !important;
+      min-height: 20rem !important;
+    }
+  }
+}
+
+.Alert {
+  color: red;
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-0.3125rem);
+  }
+  50% {
+    transform: translateX(0.3125rem);
+  }
+  75% {
+    transform: translateX(-0.3125rem);
+  }
+  100% {
+    transform: translateX(0.3125rem);
+  }
+}
+
+
+.Form {
+  flex-grow: 1;
+  display: block;
+  padding-bottom: 2.5rem;
+
+  .FormContainer {
+    border-radius: 2rem;
+    min-height: 40rem;
+    background: #fff;
+    margin: auto;
+    width: 60%;
+    display: flex;
+    padding: 2.5rem;
+    flex-direction: column;
+    align-items: center;
+
+    .Title {
+      color: #000;
+      text-align: center;
+      font-family: $secondary-font-righteous;
+      font-size: 1.25rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      margin-top: 2.1875rem;
+    }
+
+    @media (min-width: 48rem) {
+      .Title {
+        font-size: 2.375rem;
+      }
+    }
+
+    .InputForm {
+      border-radius: 1.4rem;
+      border: 0.0625rem solid #b8b8b8;
+      background: #fff;
+      font-size: 1.125rem;
+      font-weight: 500;
+      padding: 1.25rem;
+      margin-top: 3.75rem;
+    }
+
+    .InputForm::placeholder {
+      color: rgba(0, 0, 0, 0.7);
+    }
+
+    .InputFileForm {
+      position: relative;
+      border-radius: 10px;
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='1' ry='1' stroke='%232164C9FF' strokeWidth='0.0625rem' stroke-dasharray='0.625rem' stroke-dashoffset='0.25rem' strokeLinecap='square'/%3e%3c/svg%3e");
+      margin-top: 3.75rem;
+
+      .Placeholder {
+        display: flex;
+        padding: 1.5625rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        color: $primary-blue;
+        font-size: 1.125rem;
+        font-weight: 600;
+        text-transform: capitalize;
+
+        svg {
+          margin-bottom: 0.9375rem;
+        }
+      }
+    }
+
+    .RadiosWrapper {
+      display: flex;
+      align-items: center;
+      gap: 2.1875rem;
+      padding: 1.25rem;
+
+      .ContainerRadio {
+        display: block;
+        position: relative;
+        padding-left: 2.1875rem;
+        margin-bottom: 0.75rem;
+        cursor: pointer;
+        font-size: 1.375rem;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+        }
+
+        .Checkmark {
+          position: absolute;
+          top: -0.0625rem;
+          left: -0.0625rem;
+          margin-top: 0.25rem;
+          height: 1.5rem;
+          width: 1.5rem;
+          background-color: transparent;
+          border: 0.0625rem solid black;
+          border-radius: 50%;
+        }
+
+        &:hover input ~ .Checkmark {
+          background-color: #ccc;
+        }
+
+        input:checked ~ .Checkmark:after {
+          display: block;
+        }
+
+        .Checkmark:after {
+          content: '';
+          position: absolute;
+          display: none;
+          top: 0.25rem;
+          left: 0.275rem;
+          width: 0.875rem;
+          height: 0.875rem;
+          border-radius: 50%;
+          background: black;
+          border: 0.0625rem solid black;
+        }
+      }
+    }
+
+    .imageUploader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .imageGrid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+    }
+    
+    .imageContainer {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    .imageContainer img {
+      max-width: 100%;
+      max-height: 100px;
+    }
+  
+    .LoginButtonsWrapper {
+      margin-top: 4.0625rem;
+
+      .LoginButton {
+        margin-bottom: 0.9375rem;
+        border-radius: 1rem;
+        border: 0.0625rem solid $primary-blue;
+        color: $secondary-blue;
+        padding: 1.875rem;
+        text-align: center;
+        font-size: 1.25rem;
+        font-weight: 600;
+        width: 18.75rem;
+        text-transform: capitalize;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.625rem;
+      }
+
+      .GmailButton {
+        svg {
+          fill: $primary-blue;
+        }
+      }
+    }
+
+    .ButtonWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      margin-top: 3.125rem;
+
+      button {
+        margin-bottom: 0.9375rem;
+        padding: 1.25rem 7.5rem !important;
+      }
+    }
+
+    @media (max-width: 48rem) {
+      .ButtonWrapper {
+        gap: 0.625rem;
+        padding-bottom: 1.25rem;
+
+        button {
+          margin-bottom: 0;
+          padding: 0.625rem 3.75rem !important;
+        }
+      }
+    }
+  }
+}

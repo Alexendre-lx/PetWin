@@ -1,0 +1,91 @@
+@import '@petwin/styles/utils';
+
+.SortButton {
+  svg {
+    width: 1.5625rem; /* 25px */
+    height: 1.5625rem; /* 25px */
+  }
+}
+
+.SortModalContainer {
+  font-family: $primary-font-sans;
+
+  .SortModalHeader {
+    background-color: white;
+    border: 0;
+  }
+
+  .SortModalBody {
+    padding: 0;
+
+    .SortModalButton {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.219);
+      width: 100%;
+      padding: 1.25rem 0; /* 20px */
+      font-size: 1.5rem; /* 24px */
+      text-align: center;
+
+      &:hover {
+        background-color: $primary-blue;
+        color: $primary-white;
+        border-bottom: 1px solid $primary-white;
+      }
+    }
+
+    .SortModalButtonActive {
+      background-color: $primary-blue;
+      color: $primary-white;
+      border-bottom: 1px solid $primary-white;
+    }
+  }
+
+  .SortModalFooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1.25rem; /* 20px */
+  }
+}
+
+@media (max-width: 768px) {
+  .SortButton {
+    svg {
+      width: 0.9375rem; /* 15px */
+      height: 0.9375rem; /* 15px */
+    }
+  }
+
+  .SortModalContainer {
+    font-family: $primary-font-sans;
+
+    .SortModalHeader {
+      background-color: $primary-white;
+      border: 0;
+    }
+
+    .SortModalBody {
+      padding: 0;
+
+      .SortModalButton {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.219);
+        width: 100%;
+        padding: 1.25rem 0; /* 20px */
+        font-size: 1.5rem; /* 24px */
+        text-align: center;
+
+        &:hover {
+          background-color: $primary-blue;
+          color: $primary-white;
+          border-bottom: 1px solid $primary-white;
+        }
+      }
+    }
+
+    .SortModalFooter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 1.25rem; /* 20px */
+    }
+  }
+}

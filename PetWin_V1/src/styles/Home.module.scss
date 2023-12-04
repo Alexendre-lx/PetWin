@@ -1,0 +1,167 @@
+@import '@petwin/styles/utils';
+
+.homeContainer {
+  background-color: $background-blue;
+  //background-image: url('icons/mask-group.png');
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 48rem) {
+  .homeContainer {
+    padding: 0 8.875rem;
+    background-size: 4.375rem;
+
+    .homeText {
+      h1 {
+        font-size: 5.125rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+      img {
+        width: 8.4375rem;
+        height: 10.875rem;
+        position: absolute;
+      }
+    }
+
+    .buttonContainer {
+    }
+  }
+}
+
+.homeText {
+  h1 {
+    color: $primary-blue;
+    font-family: $secondary-font-righteous;
+    font-size: 2.625rem;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  h3 {
+    color: $dark-blue;
+    margin-top: 0.9375rem;
+    font-family: $primary-font-sans;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+.buttonContainer {
+  margin-top: 2.375rem;
+  min-height: 50vh;
+}
+
+.ScrollVote {
+  width: calc(100% - 4.21875rem);
+  overflow-x: scroll;
+  height: 4.75rem;
+  white-space: nowrap;
+  overflow-y: hidden;
+}
+
+.ScrollVote::-webkit-scrollbar {
+  display: none;
+}
+
+.latestVote {
+  width: 100%;
+  height: 6.5rem;
+  background-color: $primary-orange;
+  display: flex;
+  align-items: center;
+}
+
+.LatestVoteLabel {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 1.75rem;
+  font-family: 'Work Sans-SemiBold', Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+.arrowLastestVote {
+  margin-left: 0.8125rem;
+  width: 1.625rem;
+  height: 0.9375rem;
+}
+
+.latestVoteCard {
+  width: 13.3125rem;
+  height: 4.625rem;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  margin-left: 1.25rem;
+  display: inline-block;
+}
+
+.imgCard {
+  width: 3.625rem;
+  height: 3.625rem;
+  margin: 0.5rem;
+}
+
+.latestVoteCardLeft {
+  width: auto;
+  display: inline-block;
+}
+
+.latestVoteCardRight {
+  vertical-align: top;
+  width: auto;
+  display: inline-block;
+}
+
+.latestVoteCardTime {
+  margin-top: 0.75rem;
+  text-align: center;
+  top: 0px;
+  width: 5.75rem;
+  height: 0.9375rem;
+  background-color: $primary-orange;
+  border-radius: 0.25rem;
+  font-family: 'Work Sans-SemiBold', Helvetica;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 0.925rem;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.latestVoteCardTimeLabel {
+  vertical-align: middle;
+}
+
+.latestVoteCardName {
+  margin-top: 0.125rem;
+  font-family: 'Work Sans-SemiBold', Helvetica;
+  font-weight: 600;
+  color: $primary-black;
+  font-size: 1rem;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.latestVoteCardVoted {
+  font-family: 'Work Sans-SemiBold', Helvetica;
+  font-weight: 600;
+  color: $primary-orange;
+  font-size: 1rem;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}

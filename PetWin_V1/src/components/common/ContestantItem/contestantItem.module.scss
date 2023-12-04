@@ -1,0 +1,75 @@
+@import '@petwin/styles/utils';
+
+.ContestantItem {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem; /* 20px */
+  cursor: pointer;
+  margin-top: 1.25rem; /* 20px */
+  transition: 0.5s all;
+  border-radius: 0.625rem; /* 10px */
+  padding: 0.625rem; /* 10px */
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:hover {
+    background-color: $background-blue;
+  }
+
+  .SearchAvatar {
+    border-radius: 50%;
+    width: 5rem; /* 80px */
+    height: 5rem; /* 80px */
+
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  .ContestantInfo {
+    .MainInfo {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem; /* 10px */
+      margin-bottom: 0.625rem; /* 10px */
+
+      .Name {
+        font-size: 1.125rem; /* 18px */
+        font-weight: bold;
+      }
+    }
+
+    .AdditionalInfo {
+      display: flex;
+      align-items: center;
+      gap: 0.3125rem; /* 5px */
+
+      div {
+        &:after {
+          content: '\2022';
+          margin-left: 0.3125rem; /* 5px */
+        }
+
+        &:last-child {
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 48rem) {
+  .ContestantItem {
+    .ContestantInfo {
+      .MainInfo {
+        .Name {
+          font-size: 1.05rem; /* 18px */
+        }
+      }
+    }
+  }
+}

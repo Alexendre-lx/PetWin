@@ -1,0 +1,35 @@
+@import '@petwin/styles/utils';
+
+.ContestsText p {
+  color: #000;
+  text-align: center;
+  font-family: $primary-font-sans;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.42857;
+  text-transform: capitalize;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+
+  button {
+    width: 32.5%;
+  }
+}
+
+@media (min-width: 48rem) {
+  .buttonContainer {
+    button {
+      width: 17%;
+    }
+  }
+}
+
+@media (min-width: 48.0625rem) {
+  .ContestsText p {
+    font-size: 2.4rem;
+  }
+}

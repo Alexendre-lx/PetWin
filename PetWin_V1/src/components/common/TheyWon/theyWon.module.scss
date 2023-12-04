@@ -1,0 +1,144 @@
+@import '@petwin/styles/utils';
+
+.TheyWonContainer {
+  background-color: $background-blue;
+  background-image: url('../../../images/theyWonLayer.png');
+  background-position: 100% 100%;
+  background-size: contain;
+  padding-bottom: 4.25rem;
+
+  .BigTrophy {
+    width: 4.9375rem;
+  }
+
+  h2 {
+    margin: auto;
+    text-align: center;
+    color: #000;
+    font-family: $secondary-font-righteous;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  .WinnerCardContainer {
+    padding: 0.625rem;
+
+    .WinnerCard {
+      text-align: center;
+      padding: 1.875rem 1.875rem;
+      border-radius: 1.25rem;
+      border: 0.0625rem solid #cbcbcb;
+      background: #fff;
+      box-shadow: 0 0 2.5rem 0 rgba(0, 0, 0, 0.03);
+      //width: 23.125rem;
+      .ImageWrapper {
+        width: 16.25rem;
+        height: 16.25rem;
+        position: relative;
+        border-radius: 50%;
+        margin: auto;
+        position: relative;
+
+        .WinnerPrize {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          left: 0;
+
+          p {
+            width: 50%;
+            margin: 0 auto;
+            border-radius: 0.9375rem;
+            color: $primary-white;
+            background-color: $light-green;
+            text-align: center;
+            font-family: $primary-font-sans;
+            padding: 0.3125rem 0.625rem;
+            font-size: 1.125rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-transform: capitalize;
+          }
+        }
+      }
+
+      .Rank {
+        margin-top: 1.875rem;
+        margin-bottom: 0.9375rem;
+        display: flex;
+        gap: 0.625rem;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .Name {
+        color: $secondary-blue;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 0.625rem;
+      }
+
+      .Desc {
+        color: #000;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .ButtonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.25rem;
+  }
+}
+
+.SliderArrowsContainerPrev {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SliderArrowsContainerNext {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SliderArrows {
+  background-color: $secondary-blue;
+  padding: 0.3125rem;
+  border-radius: 50%;
+}
+
+.Prev {
+}
+
+.Next {
+  svg {
+    transform: rotateY(180deg);
+  }
+}
+
+.SliderWrapper {
+  scale: 0.85;
+}
+
+@media (min-width: 48rem) {
+  .SliderWrapper {
+    scale: 1;
+  }
+}

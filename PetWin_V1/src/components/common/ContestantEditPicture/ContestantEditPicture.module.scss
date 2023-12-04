@@ -1,0 +1,121 @@
+@import '@petwin/styles/utils';
+
+.Modal {
+  .ModalTitle {
+    padding: 1.25rem 0; /* 20px */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    margin: auto;
+    font-family: $secondary-font-righteous;
+    text-transform: uppercase;
+    font-size: 2rem; /* 32px */
+  }
+
+  .InputForm {
+    width: 50%;
+    margin: auto;
+    margin-top: 1.25rem; /* 20px */
+
+    .Label {
+      font-family: $primary-font-sans;
+    }
+
+    .Input {
+      border-radius: 0.875rem; /* 14px */
+      border: 1px solid #b8b8b8;
+      background: #fff;
+      font-size: 1.125rem; /* 18px */
+      font-weight: 500;
+      padding: 0.625rem 1.25rem; /* 10px 20px */
+      margin-top: 0.625rem; /* 10px */
+      width: 100%;
+    }
+
+    .Select {
+      padding-left: 1rem!important;
+    }
+  }
+  .imageUploader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .imageGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+  }
+  
+  .imageContainer {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .imageContainer img {
+    max-width: 100%;
+    max-height: 100px;
+  }
+
+  .ButtonContainer {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem; /* 20px */
+  }
+}
+
+@media (max-width: 48rem) {
+  /* 768px */
+  .Modal {
+    .ModalTitle {
+      font-size: 1.625rem; /* 26px */
+      width: 100%;
+      justify-content: center;
+    }
+
+    .InputForm {
+      width: 90%;
+    }
+
+    .Footer {
+      justify-content: center;
+    }
+  }
+}
+
+@import '@petwin/styles/utils';
+
+@media (max-width: 48rem) {
+  .Form {
+    .FormContainer {
+      width: 90% !important;
+      min-height: 20rem !important;
+    }
+  }
+}
+
+.Alert {
+  color: red;
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-0.3125rem);
+  }
+  50% {
+    transform: translateX(0.3125rem);
+  }
+  75% {
+    transform: translateX(-0.3125rem);
+  }
+  100% {
+    transform: translateX(0.3125rem);
+  }
+}

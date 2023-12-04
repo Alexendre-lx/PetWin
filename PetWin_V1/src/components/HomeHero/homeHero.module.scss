@@ -1,0 +1,99 @@
+@import '@petwin/styles/utils';
+@import '@petwin/styles/Home.module';
+
+.HomeContainer {
+  background-color: $background-blue;
+  background-image: url('../../images/dogs.png');
+  background-position: 100% 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 62vh;
+
+  .HomeWrapper {
+    .ILoveMyPetsWrapper {
+      height: 7.8125rem;
+    }
+  }
+}
+
+@media (max-width: 48rem) {
+  .HomeContainer {
+    .HomeWrapper {
+      .ILoveMyPetsWrapper {
+        height: 4.375rem;
+      }
+    }
+  }
+  .ILoveMyPetsWrapper {
+    svg {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+}
+
+@media (min-width: 48rem) {
+  .HomeContainer {
+    background-size: 80%;
+    height: 73.5vh !important;
+
+    .HomeText {
+      div {
+        margin-top: 15rem;
+      }
+
+      h1 {
+        font-size: 5.125rem !important;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      h3 {
+        font-size: 1.6875rem !important;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+      img {
+        width: 8.4375rem;
+        height: 10.875rem;
+        position: absolute;
+      }
+    }
+  }
+
+  .ButtonContainer {
+    margin-top: 3.75rem;
+  }
+}
+
+.HomeWrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10rem;
+
+  .HomeText {
+    h1 {
+      color: $primary-blue;
+      font-family: $secondary-font-righteous;
+      font-size: 3.8rem;
+      font-weight: 400;
+    }
+
+    h3 {
+      color: $dark-blue;
+      font-family: $primary-font-sans;
+      font-size: 1.1rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 128%;
+    }
+  }
+}
+
+.ButtonContainer {
+  margin-top: 3.8125rem;
+  //margin-bottom: 18.75rem;
+}

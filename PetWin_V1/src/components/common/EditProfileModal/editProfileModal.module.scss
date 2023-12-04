@@ -1,0 +1,64 @@
+@import '@petwin/styles/utils';
+
+.Modal {
+  .ModalTitle {
+    padding: 1.25rem 0; /* 20px */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    margin: auto;
+    font-family: $secondary-font-righteous;
+    text-transform: uppercase;
+    font-size: 2rem; /* 32px */
+  }
+
+  .InputForm {
+    width: 50%;
+    margin: auto;
+    margin-top: 1.25rem; /* 20px */
+
+    .Label {
+      font-family: $primary-font-sans;
+    }
+
+    .Input {
+      border-radius: 0.875rem; /* 14px */
+      border: 1px solid #b8b8b8;
+      background: #fff;
+      font-size: 1.125rem; /* 18px */
+      font-weight: 500;
+      padding: 0.625rem 1.25rem; /* 10px 20px */
+      margin-top: 0.625rem; /* 10px */
+      width: 100%;
+    }
+
+    .Select {
+      padding-left: 1rem!important;
+    }
+  }
+
+  .ButtonContainer {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem; /* 20px */
+  }
+}
+
+@media (max-width: 48rem) {
+  /* 768px */
+  .Modal {
+    .ModalTitle {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .InputForm {
+      width: 90%;
+    }
+
+    .Footer {
+      justify-content: center;
+    }
+  }
+}

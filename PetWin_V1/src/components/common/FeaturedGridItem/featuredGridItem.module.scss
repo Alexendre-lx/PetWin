@@ -1,0 +1,92 @@
+@import '@petwin/styles/utils';
+
+.FeaturedContainer {
+  aspect-ratio: 1/1;
+  padding: 0.625rem; /* 10px */
+
+  .DarkenImage {
+    position: relative;
+    cursor: pointer;
+    aspect-ratio: 1/1;
+    
+
+    img {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .DarkenImage::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+    z-index: 1;
+  }
+}
+
+.FeaturedImageInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+  svg {
+    width: 0.9375rem; /* 15px */
+  }
+
+  h4,
+  p,
+  h3 {
+    color: #fff;
+    font-family: $primary-font-sans;
+    font-style: normal;
+    margin: 0;
+  }
+
+  h4 {
+    font-size: 1.125rem; /* 18px */
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 1rem; /* 14px */
+    font-weight: 500;
+    line-height: 1.71429; /* 24px / 14px */
+    text-transform: capitalize;
+  }
+
+  h3 {
+    color: #ffce31;
+    font-size: 1rem; /* 14px */
+    font-weight: 700;
+    line-height: 1.33333; /* 22px / 14px */
+    text-transform: capitalize;
+  }
+
+  @media (min-width: 48rem) {
+    /* 768px */
+    gap: 0.3125rem; /* 5px */
+
+    svg {
+      width: 1.5625rem; /* 25px */
+    }
+
+    h4 {
+      font-size: 2rem; /* 32px */
+    }
+
+    p {
+      font-size: 1.125rem; /* 18px */
+      line-height: 1.33333; /* 24px / 18px */
+    }
+
+    h3 {
+      font-size: 1.375rem; /* 22px */
+    }
+  }
+}

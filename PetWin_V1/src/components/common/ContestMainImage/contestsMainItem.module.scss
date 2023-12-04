@@ -1,0 +1,53 @@
+@import '@petwin/styles/utils';
+
+.ContestContainer {
+  .ImageWrapper {
+    position: relative;
+
+    .FinishedWrapper {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: $light-black;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $primary-white;
+      font-family: $secondary-font-righteous;
+      font-size: 1.5rem;
+    }
+    img {
+      width: 100%;
+      aspect-ratio: 5/3;
+      object-fit: cover;
+    }
+  }
+
+  .ContestInfo {
+    font-family: $primary-font-sans;
+    display: flex;
+    flex-direction: column;
+
+    .Date {
+      color: $primary-orange;
+      font-weight: 600;
+      font-size: 1.25rem; /* 20px */
+    }
+
+    .Name {
+      font-weight: 600;
+      font-size: 1.25rem; /* 20px */
+    }
+
+    .Prize {
+      span {
+        font-weight: 600;
+        font-size: 1.125rem; /* 18px */
+      }
+    }
+  }
+}

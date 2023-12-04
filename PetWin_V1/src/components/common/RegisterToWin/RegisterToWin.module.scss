@@ -1,0 +1,124 @@
+@import '@petwin/styles/utils';
+
+.RegisterToWin {
+  .ImageContainer {
+    padding: 0;
+    position: relative;
+
+    .MeowInnerIcon,
+    .WoofInnerIcon,
+    .LeftWoofInnerIcon {
+      position: absolute;
+      right: 0;
+      width: 6.25rem; /* 100px */
+      height: 6.25rem; /* 100px */
+
+      svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .MeowInnerIcon {
+      top: -1.25rem; /* -20px */
+    }
+
+    .WoofInnerIcon {
+      top: -2.5rem; /* -40px */
+    }
+
+    .LeftWoofInnerIcon {
+      bottom: -2.5rem; /* -40px */
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @media (max-width: 36rem) {
+    /* 576px */
+    .WoofInnerIcon {
+      bottom: -7.5rem; /* -120% */
+    }
+  }
+
+  .ContentContainer {
+    background: $secondary-blue;
+
+    .ContentWrapper {
+      padding: 2.8125rem 5.625rem; /* 45px 90px */
+      position: relative;
+
+      .MeowIcon,
+      .LeftWoofIcon,
+      .WoofIcon {
+        position: absolute;
+        font-size: 3rem; /* 48px */
+        font-weight: 400;
+        font-family: $secondary-font-righteous;
+      }
+
+      .MeowIcon {
+        right: 0;
+        top: -6.25rem; /* -100px */
+      }
+
+      .LeftWoofIcon {
+        left: -6.25rem; /* -100px */
+        z-index: 2;
+        bottom: 0;
+      }
+
+      .WoofIcon {
+        right: -6.875rem; /* -110px */
+        z-index: 2;
+        bottom: 0;
+      }
+
+      .Content {
+        color: #fff;
+        font-size: 3rem; /* 48px */
+        font-weight: 400;
+        font-family: $secondary-font-righteous;
+        margin-bottom: 2.5rem; /* 40px */
+      }
+    }
+  }
+
+  @media (max-width: 48rem) {
+    /* 768px */
+    .WoofInnerIcon {
+      bottom: -18%;
+      top: auto !important;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    .ContentContainer {
+      background: $secondary-blue;
+
+      .ContentWrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 2.8125rem 1.25rem; /* 45px 20px */
+
+        .Content {
+          color: #fff;
+          font-size: 1.125rem; /* 18px */
+          font-weight: 400;
+          font-family: $secondary-font-righteous;
+          margin-bottom: 2rem!important;
+          margin-top: 2rem!important;
+        }
+      }
+    }
+  }
+
+  .OrangeContent {
+    background: #ff6737;
+  }
+}

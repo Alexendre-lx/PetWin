@@ -1,0 +1,183 @@
+@import '@petwin/styles/utils';
+
+.FullWidth {
+  width: 100%;
+}
+
+.Button {
+  background-color: $primary-blue;
+  padding: 1.0625rem 2.625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 3.5rem;
+  min-width: 15.4375rem;
+  max-height: 3.375rem;
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: rgba($primary-blue, 0.4);
+  }
+
+  a,
+  span {
+    color: #fff;
+    text-align: center;
+    font-family: $primary-font-sans;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  svg {
+    height: 1.625rem;
+    width: 1.4375rem;
+  }
+}
+
+.Big {
+  min-width: 19rem;
+  min-height: 4.125rem;
+
+  a,
+  span {
+    font-size: 1.75rem;
+  }
+
+  svg {
+    height: 1.625rem;
+    width: 1.4375rem;
+  }
+}
+
+.Md {
+  background-color: $primary-blue;
+  padding: 1.0625rem 2.625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 3.5rem;
+  max-height: 3.375rem;
+
+  a,
+  span {
+    font-size: 1rem;
+    text-transform: capitalize !important;
+  }
+
+  svg {
+    height: 1.625rem;
+    width: 1.4375rem;
+  }
+
+  a {
+    text-transform: capitalize !important;
+  }
+}
+
+.OrangeButton {
+  background-color: $primary-orange;
+
+  &:disabled {
+    background-color: rgba($primary-orange, 0.4);
+  }
+}
+
+.WhiteButton {
+  background-color: transparent !important;
+  border: 0.125rem solid $primary-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 3.5rem;
+
+  span {
+    color: $primary-blue;
+  }
+}
+
+@media (max-width: 48rem) {
+  .Button {
+    background-color: $primary-blue;
+    padding: 0.625rem 1.875rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 3.5rem;
+    min-width: 10.9375rem;
+    min-height: 2.5rem;
+
+    a,
+    span {
+      font-size: 0.9rem;
+    }
+
+    svg {
+      width: 1rem;
+    }
+  }
+
+  .Big {
+    min-width: 7.5rem;
+    padding: 0.9375rem;
+    min-height: 2.5rem;
+
+    a,
+    span {
+      font-size: 1rem;
+    }
+
+    svg {
+      width: 1rem;
+    }
+  }
+
+  .Md {
+    background-color: $primary-blue;
+    padding: 0.625rem 1.875rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 3.5rem;
+    min-height: 1.5rem;
+    min-width: 9.46875rem;
+
+    a,
+    span {
+      font-size: 0.9rem;
+      text-transform: capitalize !important;
+    }
+
+    svg {
+      width: 1rem;
+    }
+
+    a {
+      text-transform: capitalize !important;
+    }
+  }
+
+  .OrangeButton {
+    background-color: $primary-orange;
+  }
+  .WhiteButton {
+    background-color: transparent !important;
+    border: 0.125rem solid $primary-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 3.5rem;
+
+    span {
+      color: $primary-blue;
+    }
+  }
+}

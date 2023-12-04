@@ -1,0 +1,89 @@
+@import '@petwin/styles/utils';
+
+@media (max-width: 48rem) {
+  .Form {
+    .FormContainer {
+      width: 90% !important;
+      min-height: 34.375rem !important;
+    }
+  }
+}
+
+.Form {
+  flex-grow: 1;
+  display: block;
+  padding-bottom: 2.5rem;
+
+  .FormContainer {
+    border-radius: 1.25rem;
+    min-height: 50rem;
+    background: #fff;
+    margin: auto;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+
+    .Title {
+      color: #000;
+      text-align: center;
+      font-family: $secondary-font-righteous;
+      font-weight: 400;
+      text-transform: uppercase;
+      padding: 3.125rem;
+      margin: 0 auto;
+    }
+
+    .PetsContainer {
+      width: 100%;
+
+      .PetContainer {
+        transition: 0.5s all;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.9375rem;
+        padding: 0.625rem 1.25rem;
+
+        .PetAvatar {
+          width: 5rem;
+          height: 5rem;
+
+          img {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+          }
+        }
+
+        &:hover {
+          background-color: $background-light-blue;
+        }
+      }
+
+      .Chosen {
+        background-color: $background-light-blue;
+      }
+
+      .Registered {
+        cursor: not-allowed;
+        background-color: $light-grey;
+
+        &:hover {
+          background-color: $light-grey;
+        }
+      }
+    }
+
+    .AddNewButton {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      padding: 1.25rem;
+    }
+
+    .ParticipateButtonContainer {
+      margin: 2.5rem auto 0;
+    }
+  }
+}

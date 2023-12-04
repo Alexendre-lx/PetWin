@@ -1,0 +1,205 @@
+@import '@petwin/styles/utils';
+
+.Featured {
+  padding-bottom: 2.5rem; /* 40px */
+
+  .Title {
+    text-align: center;
+    font-family: $secondary-font-righteous;
+    font-size: 3rem; /* 48px */
+  }
+
+  .Tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem; /* 10px */
+    padding-bottom: 2.5rem; /* 40px */
+  }
+
+  .Tab {
+    border-radius: 100px;
+    border: 1px solid #000;
+    background: #fff;
+    padding: 0.625rem 4.375rem; /* 10px 70px */
+    color: #000;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.25rem; /* 20px */
+    cursor: pointer;
+    text-transform: capitalize;
+  }
+
+  .Active {
+    cursor: default;
+    border-radius: 100px;
+    border: 1px solid #000;
+    background: $secondary-blue;
+    color: #fff;
+  }
+
+  .TabContent {
+    .BigImage {
+      width: 100%;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    .SmallImage {
+      &:nth-child(1),
+      &:nth-child(2) {
+        margin-bottom: 1.25rem; /* 20px */
+      }
+
+      height: 50%;
+
+      img {
+        height: 50%;
+      }
+    }
+  }
+
+  .ButtonContainer {
+    margin-top: 2.5rem; /* 40px */
+    display: flex;
+    justify-content: center;
+
+    button {
+    }
+  }
+}
+
+@media (max-width: 48rem) {
+  /* 768px */
+  .Featured {
+    padding-bottom: 2.5rem; /* 40px */
+
+    .Title {
+      text-align: center;
+      font-family: $secondary-font-righteous;
+      font-size: 1.25rem; /* 20px */
+    }
+
+    .Tabs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.625rem; /* 10px */
+      padding-bottom: 2.5rem; /* 40px */
+    }
+
+    .Tab {
+      border-radius: 100px;
+      border: 1px solid #000;
+      background: #fff;
+      padding: 0.625rem 4.375rem; /* 10px 70px */
+      color: #000;
+      font-size: 1.125rem; /* 18px */
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      text-transform: capitalize;
+    }
+
+    .Active {
+      cursor: default;
+      border-radius: 100px;
+      border: 1px solid #000;
+      background: $secondary-blue;
+      color: #fff;
+    }
+
+    .TabContent {
+      .BigImage {
+        width: 100%;
+
+        img {
+          height: 100%;
+        }
+      }
+
+      .SmallImage {
+        &:nth-child(1),
+        &:nth-child(2) {
+          margin-bottom: 1.25rem; /* 20px */
+        }
+
+        height: 50%;
+
+        img {
+          height: 50%;
+        }
+      }
+    }
+
+    .ButtonContainer {
+      margin-top: 2.5rem; /* 40px */
+      display: flex;
+      justify-content: center;
+
+      button {
+      }
+    }
+  }
+}
+
+.DropdownContainer {
+  margin: auto;
+  width: 25%;
+
+  .Select {
+    border-radius: 100px;
+    border: 1px solid #000;
+    background: #fff;
+    padding: 0.75rem 1.25rem; /* 12px 20px */
+    color: #000;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.125rem; /* 18px */
+    cursor: pointer;
+    text-transform: capitalize;
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    line-height: normal;
+    font-family: $primary-font-sans;
+  }
+
+  .DropDownIcon {
+    position: absolute;
+    top: 0.9375rem; /* 15px */
+    right: 1.25rem; /* 20px */
+
+    svg {
+      width: 1.25rem; /* 20px */
+      height: 1.25rem; /* 20px */
+      transition: 0.5s;
+    }
+
+    &.ActiveSelect {
+      svg {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+}
+
+@media (max-width: 48rem) {
+  /* 768px */
+  .DropdownContainer {
+    .Select {
+      font-size: 0.9rem; /* 12px */
+    }
+
+    .DropDownIcon {
+      top: 0.875rem; /* 14px */
+      right: 0.8125rem; /* 13px */
+      svg {
+        width: 0.8125rem; /* 13px */
+        height: 0.8125rem; /* 13px */
+      }
+    }
+  }
+}

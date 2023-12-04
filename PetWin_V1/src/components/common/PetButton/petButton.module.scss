@@ -1,0 +1,50 @@
+@import '@petwin/styles/utils';
+
+.PetButtonImage {
+  width: 6.25rem; /* 100px */
+  height: 6.25rem; /* 100px */
+  border-radius: 50%;
+  border: 0.3125rem solid $primary-orange; /* 5px */
+
+  img {
+    width: 100%;
+    border-radius: 50%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.PetButtonInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $primary-white;
+  font-family: $primary-font-sans;
+  font-size: 1rem; /* 14px */
+}
+
+@media (min-width: 48rem) {
+  /* 768px */
+  .PetButtonImage {
+    width: 9.375rem; /* 150px */
+    height: 9.375rem; /* 150px */
+    border-radius: 50%;
+    border: 0.3125rem solid $primary-orange; /* 5px */
+
+    img {
+      width: 100%;
+      border-radius: 50%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .PetButtonInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $primary-white;
+    font-family: $primary-font-sans;
+    font-size: 1.5rem; /* 24px */
+  }
+}

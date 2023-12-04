@@ -1,0 +1,24 @@
+@import '@petwin/styles/utils';
+
+// VotreFichier.module.scss
+.Wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 10rem;
+    .ContestsText p {
+        color: #000;
+        text-align: center;
+        font-family: $primary-font-sans;
+        font-size: 1.4rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.42857;
+        text-transform: capitalize;
+    }
+
+    .ButtonContainer {
+        margin-top: 3.75rem;
+    }
+}

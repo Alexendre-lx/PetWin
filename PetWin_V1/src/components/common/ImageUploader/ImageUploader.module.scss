@@ -1,0 +1,61 @@
+@import '@petwin/styles/utils';
+.imageUploader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .imageGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+  }
+  
+  .imageContainer {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .imageContainer img {
+    max-width: 100%;
+    max-height: 100px;
+  }
+
+  .InputForm {
+    border-radius: 1.4rem;
+    border: 0.0625rem solid #b8b8b8;
+    background: #fff;
+    font-size: 1.125rem;
+    font-weight: 500;
+    padding: 1.25rem;
+    margin-top: 3.75rem;
+  }
+
+  .InputForm::placeholder {
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  .InputFileForm {
+    position: relative;
+    border-radius: 10px;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='1' ry='1' stroke='%232164C9FF' strokeWidth='0.0625rem' stroke-dasharray='0.625rem' stroke-dashoffset='0.25rem' strokeLinecap='square'/%3e%3c/svg%3e");
+    margin-top: 3.75rem;
+
+    .Placeholder {
+      display: flex;
+      padding: 1.5625rem;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      color: $primary-blue;
+      font-size: 1.125rem;
+      font-weight: 600;
+      text-transform: capitalize;
+
+      svg {
+        margin-bottom: 0.9375rem;
+      }
+    }
+  }

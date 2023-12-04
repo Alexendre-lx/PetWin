@@ -1,0 +1,16 @@
+@import '@petwin/styles/utils';
+
+.SearchIcon {
+  svg {
+    width: 1.5625rem; /* 25px */
+    height: 1.5625rem; /* 25px */
+  }
+
+  @media (max-width: 48rem) {
+    /* 768px */
+    svg {
+      width: 0.9375rem; /* 15px */
+      height: 0.9375rem; /* 15px */
+    }
+  }
+}

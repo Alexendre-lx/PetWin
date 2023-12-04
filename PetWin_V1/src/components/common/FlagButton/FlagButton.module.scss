@@ -1,0 +1,84 @@
+@import '@petwin/styles/utils';
+
+.flagButton {
+  padding-top: 0.3125rem; // 5px 
+  background-color: $primary-white;
+  display: flex;;
+  align-items: center;
+  border-radius: 0.625rem; /* 10px */
+  font-family: $primary-font-sans;
+  font-weight: 500;
+  font-size: 1.25rem; /* 20px */
+  max-width: auto; /* 200px */
+  padding-right: 3.125rem; // 50px
+  white-space: nowrap; 
+
+  img {
+    border-radius: 100%;
+    width: 2.5rem; /* 40px */
+    height: 2.5rem; /* 40px */
+    object-fit: cover;
+    padding: 0.125rem; /* 2px */
+    margin-right: 0.9375rem; /* 15px */
+    margin-left: 0.3125rem; /* 5px */
+  }
+}
+
+.flagButton.active {
+  background-color: $primary-blue;
+  color: $primary-white;
+}
+
+@media (max-width: 48rem) {
+  /* 768px */
+  .flagButton {
+    font-size: 0.9rem; /* 12px */
+
+    img {
+      width: 1.875rem; /* 30px */
+      height: 1.875rem; /* 30px */
+    }
+  }
+}
+/*
+.flagButton {
+  padding-top: 0.3125rem; // 5px 
+  padding-bottom: 0.3125rem; // 5px 
+  background-color: $primary-white;
+  display: flex;
+  align-items: center;
+  border-radius: 0.625rem; // 10px
+  font-family: $primary-font-sans;
+  font-weight: 500;
+  font-size: 1.25rem; // 20px 
+  max-width: 12.5rem; // 200px
+  padding-right: 3.125rem; // 50px
+
+  img {
+    border-radius: 100%;
+    width: 2.5rem; // 40px
+    height: 2.5rem; // 40px
+    object-fit: cover;
+    padding: 0.125rem; // 2px
+    margin-right: 0.9375rem; // 15px
+    margin-left: 0.3125rem; // 5px
+  }
+}
+
+.flagButton.active {
+  background-color: $primary-blue;
+  color: $primary-white;
+}
+
+@media (max-width: 48rem) {
+  // 768px
+  .flagButton {
+    font-size: 0.9rem; // 12px
+
+    img {
+      width: 1.875rem; // 30px 
+      height: 1.875rem; // 30px 
+    }
+  }
+} 
+*/
