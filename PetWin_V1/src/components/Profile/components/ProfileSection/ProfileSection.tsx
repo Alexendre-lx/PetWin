@@ -100,9 +100,10 @@ const ProfileSection = ({ animalCardsList, participantsVotesByOwner }: ProfileSe
       </div >
       <div className={styles.SectionContainer}>
         <div className={styles.SectionWrapper}>
+        <div className={styles.Title}>Votes récents</div>
           {participantsVotesByOwner.length === 0 ? (
             <>
-              <div className={styles.Title}>Votes récents</div>
+             
               <div className={styles.NoData}>pas de vote aujourd'hui</div>
             </>
 

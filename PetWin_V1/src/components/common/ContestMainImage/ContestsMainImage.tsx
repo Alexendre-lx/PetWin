@@ -37,7 +37,7 @@ function ContestMainImage({
           <div className={cn(styles.Name)}>{name}</div>
           <div className={cn(styles.Prize)}>
             {trophy?.name && `${trophy?.name}:`}{' '}
-            {trophy?.prize && <span>{trophy?.prize ? trophy?.prize :prize } €-</span>} {contestants}
+            {trophy?.prize && <span>{trophy?.prize ? trophy?.prize :prize } € -</span>} {contestants} participants
           </div>
         </div>
         <Button

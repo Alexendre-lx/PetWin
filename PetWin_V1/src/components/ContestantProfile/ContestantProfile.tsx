@@ -34,8 +34,6 @@ import CongratulationsModal from '../common/CongratulationsModal/Congratulations
 import axios from 'axios';
 
 
-import { io } from 'socket.io-client';
-
 interface Photo {
   id: number;
   imageSource: string;
@@ -339,7 +337,7 @@ const ContestantProfile = () => {
         params: { participantId: participantId, limit: 25 },
       });
       if (!response.data) {
-        throw new Error('Erreur lors de la requête');
+        setIsErrorParticipantVotes(true);
       }
       setParticipantVotes(response.data);
       setIsLoadingParticipantVotes(false);

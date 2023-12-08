@@ -305,7 +305,7 @@ export const getParticipantIdByContest = async (req: Request, res: Response) => 
         const contestId = String(req.query.contestId);
         const region = String(req.query.region);
         const limit = Number(req.query.limit) || 8;
-        const orderBy = req.query.orderBy as string;
+        const orderBy = req.query.orderBy ;
         const lastItemId = req.query.lastItemId as string;
 
         const contestRef = db.collection('Contests').doc(contestId);
@@ -318,14 +318,20 @@ export const getParticipantIdByContest = async (req: Request, res: Response) => 
         const participantsCollection = contestRef.collection('ContestParticipants');
         let q: Query<DocumentData> | undefined = participantsCollection;
         if (orderBy) {
+            console.log(orderBy)
             switch (orderBy) {
                 case 'Vote -':
                     q = participantsCollection.orderBy('votes', 'asc');
+                    console.log('vote - ')
                     break;
-                case 'Vote +':
+                case 'Vote  ':
+                    console.log('vote +')
+
                     q = participantsCollection.orderBy('votes', 'desc');
                     break;
                 case 'Recents':
+                    console.log('vrecent ')
+
                     q = participantsCollection.orderBy('createdAt', 'asc');
                     break;
                 default:
@@ -419,7 +425,7 @@ export const getParticipantIdByContestByRegion = async (req: Request, res: Respo
             case 'Vote -':
                 participantsCollectionRef = participantsCollectionRef.orderBy('votes', 'asc');
                 break;
-            case 'Vote +':
+            case 'Vote  ':
                 participantsCollectionRef = participantsCollectionRef.orderBy('votes', 'desc');
                 break;
             case 'Recents':

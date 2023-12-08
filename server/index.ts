@@ -33,13 +33,13 @@ const port = 8080;
 const server = http.createServer(app);
 
 app.use(cors());
-
+/*
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 100,
 });
 app.use('/api/', apiLimiter);
-
+*/ 
 app.use(express.json({ limit: '10mb' }))
 
 
@@ -53,6 +53,7 @@ app.use('/api/contests', routerContests);
 app.use('/api/participants', routerParticipants);
 app.use('/api/users', routerUser);
 app.use('/api/stripe', routerStripe);
+
 
 app.post('/stripe-webhook', express.json({ type: 'application/json' }), async (req, res) => {
   const event = req.body;
@@ -72,14 +73,13 @@ app.post('/stripe-webhook', express.json({ type: 'application/json' }), async (r
         break
     }
   } catch (err) {
+    console.log(err)
     res.status(400).end();
   }
 });
 
 
+
 server.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
-
-
-

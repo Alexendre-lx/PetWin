@@ -286,7 +286,7 @@ function AnimalContest({
   const [selected, setSelected] = useState<string>('Monde');
   const [flagSelected, setFlagSelected] = useState<string>(flagArr[0].key);
   const [scrollY, setScrollY] = useState(0);
-  const [sortedBy, setSortedBy] = useState('Recents');
+  const [sortedBy, setSortedBy] = useState<string>('Recents');
 
   const [alreadyParticipates, setAlreadyParticipates] = useState<MyParticipant>();
   const [isLoadingParticipants, setIsLoadingAlreadyParticipates] = useState<boolean>(true);
@@ -305,6 +305,7 @@ function AnimalContest({
   const [lastItemIdParticipantsData, setLastItemIdParticipantsData] = useState<string>('');
 
   const fetchAlreadyParticipates = async () => {
+    console.log(isLoadingDataByRegion)
     try {
       const response = await axios.get(`http://localhost:8080/api/contests/already-participates?ownerId=${currentUser?.uid}`);
       setAlreadyParticipates(response.data);
@@ -314,34 +315,36 @@ function AnimalContest({
     }
   };
 
-  const fetchParticipantsDataByRegion = async (lastItemId:string) => {
+  const fetchParticipantsDataByRegion = async (lastItemId: string) => {
     try {
       const response = await axios.get(`http://localhost:8080/api/contests/participantsByRegion?contestId=${contestId}&region=${flagSelected}&limit=8&orderBy=${sortedBy}&lastItemId${lastItemId}`);
       setParticipatesDataByRegion((prevParticipants) => {
-        return prevParticipants ? [...prevParticipants,...response.data.sortedParticipants] : response.data.sortedParticipants})
+        return prevParticipants ? [...prevParticipants, ...response.data.sortedParticipants] : response.data.sortedParticipants
+      })
       setHasNextPage(response.data.hasNextPage)
-      setLastItemId(response.data.sortedParticipants.length !== 0 ? response.data.sortedParticipants[response.data.sortedParticipants.length-1].id : '')
+      setLastItemId(response.data.sortedParticipants.length !== 0 ? response.data.sortedParticipants[response.data.sortedParticipants.length - 1].id : '')
       setIsLoadingDataByRegion(false)
-      
+
     } catch (error) {
-      setIsErrorDataByRegion(true)    
+      setIsErrorDataByRegion(true)
     }
   }
 
-  const fetchParticipantsData = async (lastItemIdParticipatesData : string) => {
+  const fetchParticipantsData = async (lastItemIdParticipatesData: string) => {
     try {
       const response = await axios.get(`http://localhost:8080/api/contests/participants?contestId=${contestId}&limit=6&orderBy=${sortedBy}&lastItemId=${lastItemIdParticipatesData}`);
       setParticipantsData((prevParticipants) => {
-        return prevParticipants ?[...prevParticipants , ...response.data.sortedParticipants] :response.data.sortedParticipants})
+        return prevParticipants ? [...prevParticipants, ...response.data.sortedParticipants] : response.data.sortedParticipants
+      })
       setHasNextPageParticipantsData(response.data.hasNextPage)
-      setLastItemIdParticipantsData(response.data.hasNextPage ? response.data.sortedParticipants[response.data.sortedParticipants.length-1].id : '')
+      setLastItemIdParticipantsData(response.data.hasNextPage ? response.data.sortedParticipants[response.data.sortedParticipants.length - 1].id : '')
       setIsLoadingParticipantsData(false)
     } catch (error) {
-      setIsErrorParticipantsData(true)     
+      setIsErrorParticipantsData(true)
     }
   }
   useEffect(() => {
-      const handleScroll = () => {
+    const handleScroll = () => {
       setScrollY(window.scrollY);
     };
 
@@ -354,24 +357,24 @@ function AnimalContest({
 
 
   useEffect(() => {
-      setParticipantsData([])
-      fetchParticipantsData('');
+    setParticipantsData([])
+    fetchParticipantsData('');
   }, [sortedBy]);
 
   useEffect(() => {
-      setParticipatesDataByRegion([])
-      fetchParticipantsDataByRegion('');
+    setParticipatesDataByRegion([])
+    fetchParticipantsDataByRegion('');
   }, [sortedBy, flagSelected]);
 
   useEffect(() => {
-    if(currentUser) {fetchAlreadyParticipates();}
-    else{
+    if (currentUser) { fetchAlreadyParticipates(); }
+    else {
       setIsLoadingAlreadyParticipates(false)
     }
   }, [currentUser])
 
   const fetchAllData = () => {
-    if(currentUser) fetchAlreadyParticipates();
+    if (currentUser) fetchAlreadyParticipates();
     fetchParticipantsDataByRegion('');
     fetchParticipantsData('')
   }
@@ -491,27 +494,33 @@ function AnimalContest({
                   />
                 ))}
               </div>
-              {participatesDataByRegion?.length === 0 ? (
-                <div
-                  className={cn(
-                    'row d-flex justify-content-center text-center pt-40',
-                    styles.ContestsText
-                  )}
-                >
-                  <h2>Aucun participant de cette région </h2>
-                </div>
-              ) : (
-                <InfiniteScroll
-                  dataLength={participatesDataByRegion.length || 0}
-                  next={()=>fetchParticipantsDataByRegion(lastItemId)}
-                  hasMore={hasNextPage}
-                  loader={<Loader />}
-                >
-                  {participatesDataByRegion && (
-                    <ContestGridList contestData={participatesDataByRegion} />
-                  )}
-                </InfiniteScroll>
-              )}
+
+              {!isLoadingDataByRegion ? (
+                participatesDataByRegion?.length === 0 ? (
+                  <div
+                    className={cn(
+                      'row d-flex justify-content-center text-center pt-40',
+                      styles.ContestsText
+                    )}
+                  >
+                    <h2>Aucun participant de cette région </h2>
+                  </div>
+                ) : (
+                  <InfiniteScroll
+                    dataLength={participatesDataByRegion.length || 0}
+                    next={() => fetchParticipantsDataByRegion(lastItemId)}
+                    hasMore={hasNextPage}
+                    loader={<Loader />}
+                  >
+                    {participatesDataByRegion && (
+                      <ContestGridList contestData={participatesDataByRegion} />
+                    )}
+                  </InfiniteScroll>
+                )) : (
+                <Loader />
+              )
+
+              }
             </>
           )}
           {selected == 'Récompenses' && (
@@ -533,17 +542,17 @@ function AnimalContest({
             <>
               {isLoadingParticipantsData ? (
 
-              <Loader />
-              ):(
-              <InfiniteScroll
-                dataLength={participantsData.length || 0}
-                next={()=>fetchParticipantsData(lastItemIdParticipantsData)}
-                hasMore={hasNextPageParticipantsData}
-                loader={<Loader />}
+                <Loader />
+              ) : (
+                <InfiniteScroll
+                  dataLength={participantsData.length || 0}
+                  next={() => fetchParticipantsData(lastItemIdParticipantsData)}
+                  hasMore={hasNextPageParticipantsData}
+                  loader={<Loader />}
 
-              >
-                <ContestGridList contestData={participantsData} />
-              </InfiniteScroll>
+                >
+                  <ContestGridList contestData={participantsData} />
+                </InfiniteScroll>
               )}
 
               <div

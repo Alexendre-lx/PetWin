@@ -44,7 +44,6 @@ function DogContestPage() {
     if (isLoadingContestInfo ) return <Loader />;
 
     if (isErrorContestInfo) return <ErreurComponent onRetry={fetchContestInfo} />;
-
     return (
         <>
             <Head>

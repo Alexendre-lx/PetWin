@@ -222,13 +222,15 @@ export const addVote = async (contestId: string, participantId: string, userId: 
       });
 
       const region = participantDoc.location as string;
-      transaction.update(db.doc(`Participants/${participantId}`), { votes: Number(Number(participantDoc.votes) + Number(votes)) });
+      const currentVotes = Number(participantDoc.votes) || 0;
+      const newVotes = currentVotes + Number(votes);
+      transaction.update(db.doc(`Participants/${participantId}`), { votes: newVotes });
 
       const contestParticipantsRef = db.collection(`Contests/${contestId}/ContestParticipants`).doc(participantId);
 
       transaction.update(contestParticipantsRef, {
 
-        votes: Number(votes),
+        votes: newVotes,
       });
       return { success: true, voteId: voteRef.id, region: region };
     });
@@ -348,6 +350,10 @@ export const updateRegionRanking = async (
           regionRank: index + 1,
           prizeVotesRegion: contestData.rewardVotesRegion?.[index] || 0,
         });
+        const contestParticipantRef = db.doc(`Contests/${contestId}/ContestParticipants/${participant.id}`);
+        await contestParticipantRef.update({
+          regionRank: index + 1,
+        })
       })
     );
 
@@ -411,6 +417,10 @@ export const updateRanking = async (
           prize: contestData.reward?.[index] || 0,
           prizeVotes: contestData.rewardVotes?.[index] || 0,
         });
+        const contestParticipantRef = db.doc(`Contests/${contestId}/ContestParticipants/${participant.id}`);
+        await contestParticipantRef.update({
+          rank: index + 1,
+        })
       })
     );
 
